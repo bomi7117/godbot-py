@@ -13,9 +13,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-# =========================
-# 기본 설정
-# =========================
+
 intents = nextcord.Intents.default()
 intents.message_content = True
 intents.voice_states = True
@@ -23,7 +21,8 @@ intents.voice_states = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 TOKEN = os.getenv("TOKEN")
-bot = nextcord.Client(intents=intents)
+if not TOKEN:
+    raise ValueError("TOKEN 환경변수가 없습니다.")
 
 LOG1_CHANNEL_ID = 1476575552268931217            # 입장로그 채널 ID
 LOG2_CHANNEL_ID = 1476989472183812269        #재화로그 채널 ID
