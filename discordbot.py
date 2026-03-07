@@ -10,7 +10,9 @@ import io
 import random
 import asyncio
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # =========================
 # 기본 설정
 # =========================
@@ -20,7 +22,7 @@ intents.voice_states = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-TOKEN = os.environ["TOKEN"]
+TOKEN = os.getenv("TOKEN")
 LOG1_CHANNEL_ID = 1476575552268931217            # 입장로그 채널 ID
 LOG2_CHANNEL_ID = 1476989472183812269        #재화로그 채널 ID
 ENTRY_ROLE_ID = 1476991031072391228  # 입장 사용 가능한 역할 ID
