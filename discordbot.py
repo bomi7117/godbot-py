@@ -1018,4 +1018,6 @@ async def on_ready():
 # =========================
 # 실행
 # =========================
+print("프로세스 시작")
+print("TOKEN exists:", bool(TOKEN))
 bot.run(TOKEN)
