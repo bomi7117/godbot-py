@@ -479,7 +479,7 @@ async def 닉네임변경(ctx, *, 새_닉네임: str):
     if not ctx.guild.me.guild_permissions.manage_nicknames:
         await ctx.send("봇에게 '닉네임 변경' 권한이 없습니다.")
         return
-
+        
     try:
         user = ctx.author
         roles = user.roles
