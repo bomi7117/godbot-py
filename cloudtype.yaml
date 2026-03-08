@@ -1,0 +1,7 @@
+name: godbot
+
+app: python@3.11
+
+options:
+  install: pip install -r requirements.txt
+  start: python discordbot.py
