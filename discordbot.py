@@ -308,11 +308,6 @@ async def enter(interaction: Interaction):
 
     await interaction.response.send_modal(EntryModal(interaction.user))
 
-@bot.event
-async def on_ready():
-    await bot.sync_application_commands()
-    print(f'Logged in as {bot.user}')
-
 # =========================
 # 가입 / 탈퇴
 # =========================
