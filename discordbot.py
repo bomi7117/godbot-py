@@ -80,7 +80,7 @@ def is_on_cooldown(last_time_str, cooldown_minutes):
     if last_time_str is None:
         return False, 0
     try:
-        last_time = datetime.strptime(last_time_str, "%Y-%m-%d %H:%M:%S")
+        last_time = datetime.datetime.strptime(last_time_str, "%Y-%m-%d %H:%M:%S")
         now = datetime.now()
         remaining = (last_time + timedelta(minutes=cooldown_minutes)) - now
         if remaining.total_seconds() > 0:
